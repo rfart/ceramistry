@@ -7,14 +7,14 @@ const steps = [
     title: "Capture Inspiration",
     description:
       "Snap a photo of anything around you — a sunset, a coffee cup, a mossy wall — and extract its dominant color palette instantly.",
-    video: "/images/step-01-capture.mov",
+    video: "/images/step-01-capture.mp4",
   },
   {
     number: "02",
     title: "Generate the Recipe",
     description:
       "Pick your swatch to receive a balanced, gram-measured glaze recipe ready for the studio scale. Every ingredient, every weight, dialed in.",
-    video: "/images/step-02-generate.mov",
+    video: "/images/step-02-generate.mp4",
   },
   {
     number: "03",

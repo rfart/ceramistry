@@ -9,10 +9,26 @@ import AppVsReality from "@/components/AppVsReality";
 import FAQ from "@/components/FAQ";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
+import {
+  softwareApplicationJsonLd,
+  faqPageJsonLd,
+} from "@/lib/structured-data";
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqPageJsonLd),
+        }}
+      />
       <Navbar />
       <main>
         <Hero />

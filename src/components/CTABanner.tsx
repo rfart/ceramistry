@@ -61,10 +61,11 @@ export default function CTABanner() {
           {/* Right column — Phone mockup */}
           <ScrollReveal delay={0.15}>
             <div className="relative w-full md:scale-[1.75] md:translate-x-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/images/cta-phone.png"
                 alt="Ceramistry app showing Royal Blue glaze recipe on iPhone"
+                width={1200}
+                height={2400}
                 className="w-full h-auto"
               />
             </div>
