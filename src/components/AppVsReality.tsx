@@ -23,7 +23,7 @@ const testimonials = [
     name: "Ariebul Hikami",
     role: "Project Manager at Gridwerk Studio",
     studio: "Owner of Aranaloka Ceramic Studio",
-    image: "/images/nasy.jpg",
+    initial: "A" as const,
   },
   {
     quote:
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Nasya Alifah Ramadani",
     role: "Co-Founder",
     studio: "Ponyee Keramik",
-    image: "/images/ariebul.jpg",
+    initial: "N" as const,
   },
   {
     quote:
