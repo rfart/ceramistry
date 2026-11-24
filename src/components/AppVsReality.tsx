@@ -3,16 +3,16 @@ import ScrollReveal from "./ScrollReveal";
 
 const comparisons = [
   {
-    title: "Olive Khaki Matte",
+    title: "Dark Chocolate Matte",
     metadata: "Cone 6 · Oxidation · Stoneware",
-    appGradient: "linear-gradient(135deg, #6B7C3F, #8B9A5C, #A4B06D)",
-    realGradient: "linear-gradient(135deg, #7A8B4A, #96A860, #B0C278)",
+    appImage: "/images/proof-app.png",
+    realImage: "/images/proof-fired.jpg",
   },
   {
-    title: "Deep Ocean Blue",
-    metadata: "Cone 8 · Reduction · Porcelain",
-    appGradient: "linear-gradient(135deg, #1A3A5C, #2C5F8A, #4A82B0)",
-    realGradient: "linear-gradient(135deg, #1E4268, #336D96, #5090BC)",
+    title: "Burgundy Red Gloss",
+    metadata: "Cone 6 · Oxidation · Stoneware",
+    appImage: "/images/proof-app-2.png",
+    realImage: "/images/proof-fired-2.jpg",
   },
 ];
 
@@ -23,7 +23,7 @@ const testimonials = [
     name: "Ariebul Hikami",
     role: "Project Manager at Gridwerk Studio",
     studio: "Owner of Aranaloka Ceramic Studio",
-    image: "/images/ariebul.jpg",
+    image: "/images/nasy.jpg",
   },
   {
     quote:
@@ -31,7 +31,7 @@ const testimonials = [
     name: "Nasya Alifah Ramadani",
     role: "Co-Founder",
     studio: "Ponyee Keramik",
-    image: "/images/nasy.jpg",
+    image: "/images/ariebul.jpg",
   },
   {
     quote:
@@ -73,13 +73,13 @@ export default function AppVsReality() {
                     <p className="text-[10px] font-[family-name:var(--font-mono)] uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
                       App Preview
                     </p>
-                    <div
-                      className="aspect-square rounded-[var(--radius-sm)] flex items-end p-3"
-                      style={{ background: comp.appGradient }}
-                    >
-                      <span className="text-[10px] font-[family-name:var(--font-mono)] text-white/60">
-                        [Digital Preview]
-                      </span>
+                    <div className="aspect-square rounded-[var(--radius-sm)] overflow-hidden relative">
+                      <Image
+                        src={comp.appImage}
+                        alt={`${comp.title} — app preview`}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
                   {/* Fired result */}
@@ -87,13 +87,13 @@ export default function AppVsReality() {
                     <p className="text-[10px] font-[family-name:var(--font-mono)] uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
                       Fired Result
                     </p>
-                    <div
-                      className="aspect-square rounded-[var(--radius-sm)] flex items-end p-3"
-                      style={{ background: comp.realGradient }}
-                    >
-                      <span className="text-[10px] font-[family-name:var(--font-mono)] text-white/60">
-                        [Fired Tile Photo]
-                      </span>
+                    <div className="aspect-square rounded-[var(--radius-sm)] overflow-hidden relative">
+                      <Image
+                        src={comp.realImage}
+                        alt={`${comp.title} — fired result`}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                   </div>
                 </div>
