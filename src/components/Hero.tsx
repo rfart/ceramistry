@@ -1,6 +1,7 @@
 "use client";
 
 import { Download, Play } from "lucide-react";
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 export default function Hero({
@@ -42,22 +43,28 @@ export default function Hero({
             </div>
           </ScrollReveal>
 
-          {/* Hero visual placeholder */}
+          {/* Hero visual — iPhone mockup with app screenshot */}
           <ScrollReveal delay={0.15}>
-            <div className="relative aspect-[4/3] rounded-[var(--radius-lg)] overflow-hidden bg-gradient-to-br from-[#C4A472] via-[#D9C4A0] to-[#8B6F47]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center px-8">
-                  <div className="w-16 h-16 rounded-[var(--radius-md)] bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
-                      <rect x="5" y="2" width="14" height="20" rx="3" />
-                      <circle cx="12" cy="18" r="1" />
-                    </svg>
-                  </div>
-                  <p className="text-white/80 font-[family-name:var(--font-mono)] text-sm">
-                    [Hero: cup + iPhone — 16:9]
-                  </p>
-                </div>
+            <div className="relative mx-auto w-full max-w-[320px] md:max-w-[360px]">
+              {/* Screenshot inside the frame */}
+              <div className="absolute left-[4.1%] right-[4.1%] top-[2%] bottom-[2%] rounded-[38px] md:rounded-[43px] overflow-hidden">
+                <Image
+                  src="/images/app-screenshot.jpg"
+                  alt="Ceramistry app showing Soft Sky Blue glaze preview on a 3D mug"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
+              {/* iPhone frame overlay */}
+              <Image
+                src="/images/iphone-frame.png"
+                alt=""
+                width={388}
+                height={800}
+                className="relative w-full h-auto"
+                priority
+              />
             </div>
           </ScrollReveal>
         </div>

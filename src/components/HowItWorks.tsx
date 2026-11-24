@@ -1,4 +1,5 @@
 import { Camera, FlaskConical, Eye } from "lucide-react";
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const steps = [
@@ -44,19 +45,39 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 0.1}>
               <div className="flex flex-col items-start">
-                {/* Device frame placeholder */}
-                <div className="w-full aspect-[9/16] max-w-[220px] rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-text-primary)]/5 flex items-center justify-center mb-8 mx-auto">
-                  <div className="text-center">
-                    <step.icon
-                      size={32}
-                      className="mx-auto mb-3 text-[var(--color-accent-primary)]"
-                      strokeWidth={1.5}
+                {/* Device frame */}
+                {step.number === "03" ? (
+                  <div className="relative w-full max-w-[220px] mb-8 mx-auto">
+                    <div className="absolute left-[4.1%] right-[4.1%] top-[2%] bottom-[2%] rounded-[26px] overflow-hidden">
+                      <Image
+                        src="/images/app-screenshot.jpg"
+                        alt="Ceramistry 3D preview of Soft Sky Blue mug"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <Image
+                      src="/images/iphone-frame.png"
+                      alt=""
+                      width={388}
+                      height={800}
+                      className="relative w-full h-auto"
                     />
-                    <p className="text-xs font-[family-name:var(--font-mono)] text-[var(--color-text-secondary)]">
-                      [UI Video: Step {step.number}]
-                    </p>
                   </div>
-                </div>
+                ) : (
+                  <div className="w-full aspect-[9/16] max-w-[220px] rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-text-primary)]/5 flex items-center justify-center mb-8 mx-auto">
+                    <div className="text-center">
+                      <step.icon
+                        size={32}
+                        className="mx-auto mb-3 text-[var(--color-accent-primary)]"
+                        strokeWidth={1.5}
+                      />
+                      <p className="text-xs font-[family-name:var(--font-mono)] text-[var(--color-text-secondary)]">
+                        [UI Video: Step {step.number}]
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {/* Text */}
                 <div className="text-center w-full">

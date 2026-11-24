@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -20,8 +21,15 @@ export default function Navbar() {
         {/* Wordmark */}
         <a
           href="#"
-          className="font-[family-name:var(--font-display)] italic text-xl tracking-tight text-[var(--color-text-primary)]"
+          className="flex items-center gap-2 font-[family-name:var(--font-display)] italic text-xl tracking-tight text-[var(--color-text-primary)]"
         >
+          <Image
+            src="/images/logo.png"
+            alt="Ceramistry logo"
+            width={28}
+            height={28}
+            className="rounded-md"
+          />
           Ceramistry
         </a>
 

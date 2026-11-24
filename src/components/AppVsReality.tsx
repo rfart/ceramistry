@@ -17,14 +17,28 @@ const comparisons = [
 
 const testimonials = [
   {
-    quote: "[Testimonial pending]",
-    name: "[Name]",
-    studio: "[Studio]",
+    quote:
+      "Ceramistry can be used to explore different glaze color possibilities. The app is very helpful for experimenting with various colors and can save quite a bit of time during the R&D process.",
+    name: "Ariebul Hikami",
+    role: "Project Manager at Gridwerk Studio",
+    studio: "Owner of Aranaloka Ceramic Studio",
+    initial: "A",
   },
   {
-    quote: "[Testimonial pending]",
-    name: "[Name]",
-    studio: "[Studio]",
+    quote:
+      "Ceramistry can be helpful for workshop students who are curious about glaze materials, ingredient quantities, and the final results. Instead of having everyone weigh the ingredients and wait several weeks, the app helps visualize and experiment with different glaze colors.",
+    name: "Nasya Alifah Ramadani",
+    role: "Co-Founder",
+    studio: "Ponyee Keramik",
+    initial: "N",
+  },
+  {
+    quote:
+      "Useful tool for introducing glaze concepts to workshop students. The AR feature also helps communicate color expectations with clients.",
+    name: "Bagus Aji Nugroho",
+    role: "Co-Founder",
+    studio: "Ponyee Keramik",
+    initial: "B",
   },
 ];
 
@@ -96,18 +110,23 @@ export default function AppVsReality() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
-              <blockquote className="bg-[var(--color-accent-white)] rounded-[var(--radius-lg)] p-6 border border-[var(--color-text-primary)]/5">
-                <p className="text-sm italic text-[var(--color-text-secondary)] mb-4 leading-relaxed">
+              <blockquote className="bg-[var(--color-accent-white)] rounded-[var(--radius-lg)] p-6 border border-[var(--color-text-primary)]/5 h-full flex flex-col">
+                <p className="text-sm italic text-[var(--color-text-secondary)] mb-4 leading-relaxed flex-1">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <footer className="text-xs text-[var(--color-text-secondary)]">
-                  <span className="font-semibold text-[var(--color-text-primary)]">
-                    {t.name}
-                  </span>
-                  , {t.studio}
+                <footer className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[var(--color-accent-primary)] flex items-center justify-center text-sm font-semibold text-[var(--color-accent-white)] shrink-0">
+                    {t.initial}
+                  </div>
+                  <div className="text-xs text-[var(--color-text-secondary)]">
+                    <span className="font-semibold text-[var(--color-text-primary)] block">
+                      {t.name}
+                    </span>
+                    {t.role}, {t.studio}
+                  </div>
                 </footer>
               </blockquote>
             </ScrollReveal>

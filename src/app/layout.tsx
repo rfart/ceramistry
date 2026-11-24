@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   title: "Ceramistry — Turn Colors Into Kiln-Ready Glaze Recipes",
   description:
     "Take the guesswork out of ceramic glazing. Match real-world colors with your camera, generate measured recipes, and preview fired results before you open the kiln.",
+  icons: {
+    icon: "/images/logo-bg.png",
+    apple: "/images/logo-bg.png",
+  },
   openGraph: {
     title: "Ceramistry — Turn Colors Into Kiln-Ready Glaze Recipes",
     description:

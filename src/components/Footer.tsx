@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="py-12 md:py-16 border-t border-[var(--color-text-primary)]/8">
@@ -5,7 +7,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
           <div>
-            <p className="font-[family-name:var(--font-display)] italic text-xl text-[var(--color-text-primary)] mb-2">
+            <p className="flex items-center gap-2 font-[family-name:var(--font-display)] italic text-xl text-[var(--color-text-primary)] mb-2">
+              <Image
+                src="/images/logo.png"
+                alt="Ceramistry logo"
+                width={24}
+                height={24}
+                className="rounded-md"
+              />
               Ceramistry
             </p>
             <p className="text-sm text-[var(--color-text-secondary)]">
