@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --color-background: #E8D5B5;
+  --color-background: #FAF8F5;
   --color-surface: #F0E4D0;
   --color-text-primary: #1C1B1A;
   --color-text-secondary: #5C5852;
   --color-accent-primary: #4A0072;
   --color-accent-secondary: #8CAFCE;
-  --color-accent-white: #FAF8F5;
+  --color-accent-white: #E8D5B5;
 
   --font-display: var(--font-newsreader);
   --font-body: var(--font-plus-jakarta-sans);

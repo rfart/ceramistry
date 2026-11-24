@@ -27,7 +27,7 @@ export default function Hero({
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#download"
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-semibold text-[var(--color-accent-white)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
+                  className="inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-semibold text-[var(--color-background)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
                 >
                   <Download size={18} />
                   Download on the App Store

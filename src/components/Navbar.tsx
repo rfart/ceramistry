@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <a
           href="#download"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[var(--color-accent-white)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
+          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[var(--color-background)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
         >
           <Download size={15} />
           Download for iOS
@@ -89,7 +89,7 @@ export default function Navbar() {
               <a
                 href="#download"
                 onClick={() => setMobileOpen(false)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 mt-2 text-sm font-semibold text-[var(--color-accent-white)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)]"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 mt-2 text-sm font-semibold text-[var(--color-background)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)]"
               >
                 <Download size={15} />
                 Download for iOS

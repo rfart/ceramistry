@@ -47,7 +47,7 @@ export default function PhotoToGlazeDemo() {
                     onClick={() => handlePresetChange(i)}
                     className={`relative aspect-[4/3] rounded-[var(--radius-md)] overflow-hidden transition-all duration-500 ${
                       activePresetIndex === i
-                        ? "ring-2 ring-[var(--color-accent-primary)] ring-offset-2 ring-offset-[var(--color-accent-white)] scale-[1.02]"
+                        ? "ring-2 ring-[var(--color-accent-primary)] ring-offset-2 ring-offset-[var(--color-background)] scale-[1.02]"
                         : "opacity-70 hover:opacity-100"
                     }`}
                     aria-label={`Select ${p.name} preset`}

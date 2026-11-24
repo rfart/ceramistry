@@ -5,7 +5,7 @@ export default function CTABanner() {
   return (
     <section
       id="download"
-      className="relative py-24 md:py-32 bg-[var(--color-text-primary)] text-[var(--color-accent-white)] film-grain overflow-hidden"
+      className="relative py-24 md:py-32 bg-[var(--color-text-primary)] text-[var(--color-background)] film-grain overflow-hidden"
     >
       <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
         <ScrollReveal>
@@ -16,7 +16,7 @@ export default function CTABanner() {
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <p className="text-fluid-body text-[var(--color-accent-white)]/60 mb-10 max-w-lg mx-auto">
+          <p className="text-fluid-body text-[var(--color-background)]/60 mb-10 max-w-lg mx-auto">
             Download Ceramistry and start turning inspiration into kiln-ready
             glaze recipes today.
           </p>
@@ -24,7 +24,7 @@ export default function CTABanner() {
         <ScrollReveal delay={0.2}>
           <a
             href="#"
-            className="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-[var(--color-text-primary)] bg-[var(--color-accent-white)] rounded-[var(--radius-pill)] hover:bg-white transition-colors duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 text-base font-semibold text-[var(--color-text-primary)] bg-[var(--color-accent-white)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
           >
             <Download size={20} />
             Download on the App Store

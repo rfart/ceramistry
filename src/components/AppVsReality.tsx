@@ -118,7 +118,7 @@ export default function AppVsReality() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <footer className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[var(--color-accent-primary)] flex items-center justify-center text-sm font-semibold text-[var(--color-accent-white)] shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[var(--color-accent-primary)] flex items-center justify-center text-sm font-semibold text-[var(--color-background)] shrink-0">
                     {t.initial}
                   </div>
                   <div className="text-xs text-[var(--color-text-secondary)]">
