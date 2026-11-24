@@ -1,14 +1,11 @@
 "use client";
 
-import { Download, Play } from "lucide-react";
+import { Download } from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
+import { APP_STORE_URL } from "@/lib/constants";
 
-export default function Hero({
-  onOpenVideo,
-}: {
-  onOpenVideo: () => void;
-}) {
+export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center film-grain overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-24 pb-16 md:pt-32 md:pb-24">
@@ -26,19 +23,14 @@ export default function Hero({
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="#download"
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-semibold text-[var(--color-background)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
                 >
                   <Download size={18} />
                   Download on the App Store
                 </a>
-                <button
-                  onClick={onOpenVideo}
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-semibold text-[var(--color-text-primary)] bg-[var(--color-surface)] rounded-[var(--radius-pill)] hover:bg-[var(--color-accent-white)] transition-colors duration-300 border border-[var(--color-text-primary)]/10"
-                >
-                  <Play size={18} />
-                  Watch the 60s Film
-                </button>
               </div>
             </div>
           </ScrollReveal>

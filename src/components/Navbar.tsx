@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import Image from "next/image";
+import { APP_STORE_URL } from "@/lib/constants";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
@@ -48,7 +49,9 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="#download"
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[var(--color-background)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)] hover:opacity-90 transition-opacity duration-300"
         >
           <Download size={15} />
@@ -87,7 +90,9 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#download"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 mt-2 text-sm font-semibold text-[var(--color-background)] bg-[var(--color-accent-primary)] rounded-[var(--radius-pill)]"
               >

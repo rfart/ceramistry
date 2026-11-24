@@ -82,8 +82,8 @@ export default function VideoModal({
             {/* Video container */}
             <div className="rounded-[var(--radius-lg)] overflow-hidden bg-black aspect-video">
               <LiteYouTubeEmbed
-                id="dQw4w9WgXcQ"
-                title="Ceramistry — 60 Second Film"
+                id="HXkKZfaQreo"
+                title="Ceramistry — See It in Action"
                 poster="maxresdefault"
               />
             </div>
