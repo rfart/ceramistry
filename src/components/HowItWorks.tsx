@@ -1,28 +1,27 @@
-import { Camera, FlaskConical, Eye } from "lucide-react";
 import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const steps = [
   {
     number: "01",
-    icon: Camera,
     title: "Capture Inspiration",
     description:
       "Snap a photo of anything around you — a sunset, a coffee cup, a mossy wall — and extract its dominant color palette instantly.",
+    video: "/images/step-01-capture.mov",
   },
   {
     number: "02",
-    icon: FlaskConical,
     title: "Generate the Recipe",
     description:
       "Pick your swatch to receive a balanced, gram-measured glaze recipe ready for the studio scale. Every ingredient, every weight, dialed in.",
+    video: "/images/step-02-generate.mov",
   },
   {
     number: "03",
-    icon: Eye,
     title: "Preview Before You Fire",
     description:
       "Inspect the simulated finish on a 3D form tailored to your clay body, cone, and firing atmosphere — before you open the kiln.",
+    video: "/images/step-03-preview.mp4",
   },
 ];
 
@@ -45,39 +44,26 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <ScrollReveal key={step.number} delay={i * 0.1}>
               <div className="flex flex-col items-start">
-                {/* Device frame */}
-                {step.number === "03" ? (
-                  <div className="relative w-full max-w-[220px] mb-8 mx-auto">
-                    <div className="absolute left-[4.1%] right-[4.1%] top-[2%] bottom-[2%] rounded-[26px] overflow-hidden">
-                      <Image
-                        src="/images/app-screenshot.jpg"
-                        alt="Ceramistry 3D preview of Soft Sky Blue mug"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <Image
-                      src="/images/iphone-frame.png"
-                      alt=""
-                      width={388}
-                      height={800}
-                      className="relative w-full h-auto"
+                {/* iPhone frame with video */}
+                <div className="relative w-full max-w-[220px] mb-8 mx-auto">
+                  <div className="absolute left-[4.1%] right-[4.1%] top-[1.4%] bottom-[1.4%] rounded-[26px] overflow-hidden bg-black">
+                    <video
+                      src={step.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
-                ) : (
-                  <div className="w-full aspect-[9/16] max-w-[220px] rounded-[var(--radius-lg)] bg-[var(--color-surface)] border border-[var(--color-text-primary)]/5 flex items-center justify-center mb-8 mx-auto">
-                    <div className="text-center">
-                      <step.icon
-                        size={32}
-                        className="mx-auto mb-3 text-[var(--color-accent-primary)]"
-                        strokeWidth={1.5}
-                      />
-                      <p className="text-xs font-[family-name:var(--font-mono)] text-[var(--color-text-secondary)]">
-                        [UI Video: Step {step.number}]
-                      </p>
-                    </div>
-                  </div>
-                )}
+                  <Image
+                    src="/images/iphone-frame.png"
+                    alt=""
+                    width={388}
+                    height={800}
+                    className="relative w-full h-auto"
+                  />
+                </div>
 
                 {/* Text */}
                 <div className="text-center w-full">

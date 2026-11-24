@@ -47,7 +47,7 @@ export default function Hero({
           <ScrollReveal delay={0.15}>
             <div className="relative mx-auto w-full max-w-[320px] md:max-w-[360px]">
               {/* Screenshot inside the frame */}
-              <div className="absolute left-[4.1%] right-[4.1%] top-[2%] bottom-[2%] rounded-[38px] md:rounded-[43px] overflow-hidden">
+              <div className="absolute left-[4.1%] right-[4.1%] top-[1.4%] bottom-[1.4%] rounded-[38px] md:rounded-[43px] overflow-hidden bg-black">
                 <Image
                   src="/images/app-screenshot.jpg"
                   alt="Ceramistry app showing Soft Sky Blue glaze preview on a 3D mug"
