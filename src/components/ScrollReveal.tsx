@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion, useInView } from "framer-motion";
 import { type ReactNode, useRef, useState, useEffect } from "react";
 
 export default function ScrollReveal({
@@ -12,35 +11,62 @@ export default function ScrollReveal({
   className?: string;
   delay?: number;
 }) {
-  const prefersReducedMotion = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.05 });
-  const [fallback, setFallback] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setFallback(true), 1500);
-    return () => clearTimeout(timer);
+    const el = ref.current;
+    if (!el) {
+      setVisible(true);
+      return;
+    }
+
+    // Check reduced motion preference
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+
+    // Fallback: guarantee visibility after 1.5s
+    const timer = setTimeout(() => setVisible(true), 1500);
+
+    if (!("IntersectionObserver" in window)) {
+      setVisible(true);
+      clearTimeout(timer);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+          clearTimeout(timer);
+        }
+      },
+      { threshold: 0.05 },
+    );
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
 
-  if (prefersReducedMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
-  const visible = isInView || fallback;
-
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-      transition={{
-        duration: 0.6,
-        delay: visible && !fallback ? delay : 0,
-        ease: [0.22, 1, 0.36, 1],
-      }}
       className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "none" : "translateY(24px)",
+        transition: visible
+          ? `opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s`
+          : "none",
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
