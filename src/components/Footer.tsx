@@ -25,13 +25,17 @@ export default function Footer() {
           {/* Links */}
           <div className="flex flex-wrap items-center gap-6 text-sm text-[var(--color-text-secondary)]">
             <a
-              href="/privacy"
+              href="https://www.privacypolicies.com/live/d5463fcc-19b3-46ba-91b2-82a39be36b00"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[var(--color-text-primary)] transition-colors duration-300"
             >
               Privacy Policy
             </a>
             <a
-              href="/terms"
+              href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[var(--color-text-primary)] transition-colors duration-300"
             >
               Terms of Service

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 
 const comparisons = [
@@ -22,7 +23,7 @@ const testimonials = [
     name: "Ariebul Hikami",
     role: "Project Manager at Gridwerk Studio",
     studio: "Owner of Aranaloka Ceramic Studio",
-    initial: "A",
+    image: "/images/ariebul.jpg",
   },
   {
     quote:
@@ -30,7 +31,7 @@ const testimonials = [
     name: "Nasya Alifah Ramadani",
     role: "Co-Founder",
     studio: "Ponyee Keramik",
-    initial: "N",
+    image: "/images/nasy.jpg",
   },
   {
     quote:
@@ -38,7 +39,7 @@ const testimonials = [
     name: "Bagus Aji Nugroho",
     role: "Co-Founder",
     studio: "Ponyee Keramik",
-    initial: "B",
+    initial: "B" as const,
   },
 ];
 
@@ -118,9 +119,19 @@ export default function AppVsReality() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <footer className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[var(--color-accent-primary)] flex items-center justify-center text-sm font-semibold text-[var(--color-background)] shrink-0">
-                    {t.initial}
-                  </div>
+                  {"image" in t ? (
+                    <Image
+                      src={t.image as string}
+                      alt={t.name}
+                      width={36}
+                      height={36}
+                      className="w-9 h-9 rounded-full object-cover shrink-0"
+                    />
+                  ) : (
+                    <div className="w-9 h-9 rounded-full bg-[var(--color-accent-primary)] flex items-center justify-center text-sm font-semibold text-[var(--color-background)] shrink-0">
+                      {t.initial}
+                    </div>
+                  )}
                   <div className="text-xs text-[var(--color-text-secondary)]">
                     <span className="font-semibold text-[var(--color-text-primary)] block">
                       {t.name}
